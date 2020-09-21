@@ -1,0 +1,22 @@
+{
+  "name": "zoom-clone",
+  "version": "1.0.0",
+  "description": "- Initialize NodeJS Project - Initialize first view - create room a room id - Add the ability to view my own video - Add ability to allow others to stream their video - Add styling - Add create messages - Add mute video - Add stop Video",
+  "main": "serve.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/villatrue/zoom-clone1.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/villatrue/zoom-clone1/issues"
+  },
+  "homepage": "https://github.com/villatrue/zoom-clone1#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
