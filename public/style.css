@@ -1,0 +1,24 @@
+#video-grid{
+    display: flex;
+    justify-content: center;
+}
+video {
+    width: 300px;
+    height: 400px;
+    object-fit: cover; /* zooms into the video until it fills in the square and cuts off edging*/
+}
+
+.main {
+    height: 100vh;
+    display: flex
+}
+
+.main__left {
+    flex: 0.8;
+    display: flex;
+    
+}
+
+.main__right {
+    flex: 0.2;
+}
