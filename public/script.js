@@ -26,6 +26,21 @@ navigator.mediaDevices
     socket.on("user-connected", userId => {
       connectToNewUser(userId, stream);
     });
+    let text = $("input");
+    // press enter send message
+    $("html").keydown(function(e) {
+      if (e.which == 13 && text.val().length !== 0) {
+        console.log("got here")
+        //event being the enter button which value is 13
+        socket.emit("message", text.val());
+        text.val("");
+      }
+    });
+
+    socket.on("createMessage", message => {
+      $(".messages").append(`<li class="message"><b>user</b><br/>${message}</li>`);
+      // scrollToBottom()
+    });
   });
 
 socket.on("user-disconnected", userId => {
@@ -57,17 +72,16 @@ function addVideoStream(video, stream) {
   videoGrid.append(video);
 }
 
-let text = $("input");
-// press enter send message
-$("html").keydown(function(e) {
-  if (e.which == 13 && text.val().length !== 0) { //event being the enter button which value is 13
-    socket.emit("message", text.val());
-    text.val("");
-  }
-});
+// let text = $("input");
+// // press enter send message
+// $("html").keydown(function(e) {
+//   if (e.which == 13 && text.val().length !== 0) { //event being the enter button which value is 13
+//     socket.emit("message", text.val());
+//     text.val("");
+//   }
+// });
 
-socket.on("createMessage", message => {
-  console.log("something", message)
-  $("ul").append(`<li class="message"><b>user</b><br/>${message}</li>`);
-  // scrollToBottom()
-})
+// socket.on("createMessage", message => {
+//   $("ul").append(`<li class="message"><b>user</b><br/>${message}</li>`);
+//   // scrollToBottom()
+// })

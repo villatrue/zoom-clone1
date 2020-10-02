@@ -95,6 +95,11 @@ video {
     color: #f5f5f5
 }
 
+.messages {
+    color: white;
+    list-style: none;
+}
+
 
 .leave_meeting {
     color: red
