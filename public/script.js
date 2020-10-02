@@ -1,3 +1,5 @@
+import { text } from "body-parser";
+
 const socket = io("/");
 const videoGrid = document.getElementById("video-grid");
 const myPeer = new Peer(undefined, {
@@ -56,3 +58,15 @@ function addVideoStream(video, stream) {
   });
   videoGrid.append(video);
 }
+
+let msgText = $('input')
+console.log(msgText)
+
+$('html').keydown((e) =>{
+  if(e.which == 13 && msgText.val().length !==0){
+    socket.emit('message', msgText.val());
+    msgText.val('')
+  }
+})
+
+
