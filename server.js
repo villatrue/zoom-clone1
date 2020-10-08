@@ -2,7 +2,16 @@ const express = require('express');
 const app = express();
 const server = require('http').Server(app); // allows server to be used with socket.io
 const io = require('socket.io')(server) // creates server based on express server and passes it to socket.io and knows how to interract with that
+
+const { ExpressPeerServer } = require('peer');
+const peerServer = ExpressPeerServer(server, {
+  debug: true
+});
+
 const { v4: uuidV4 } = require('uuid');
+
+app.use('/peerjs', peerServer);
+
 
 app.set('view engine', 'ejs');
 app.use(express.static('public'));
