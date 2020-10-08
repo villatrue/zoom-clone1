@@ -102,10 +102,6 @@ video {
 }
 
 
-.leave_meeting {
-    color: red
-}
-
-.unmute {
+.leave_meeting, .stop, .unmute {
     color: red
 }
